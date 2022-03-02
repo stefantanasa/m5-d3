@@ -50,7 +50,7 @@ blogsRouter.post("/", blogValidator, (req, res, next) => {
   const errorsList = validationResult(req);
   try {
     if (errorsList.isEmpty()) {
-      const newBlog = { ...req.body, createdAt: new Date(), id: unique() };
+      const newBlog = { ...req.body, createdAt: new Date(), _id: unique() };
       const blogsArray = getBlogs();
       blogsArray.push(newBlog);
       writeBlogs(blogsArray);

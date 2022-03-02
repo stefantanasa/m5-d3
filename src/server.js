@@ -2,6 +2,7 @@ import express from "express";
 import authorsRouters from "./authors/index.js";
 import blogsRouters from "./blogs/index.js";
 import listEndpoints from "express-list-endpoints";
+import cors from "cors";
 import {
   badRequestHandler,
   unauthorizedHandler,
@@ -16,6 +17,7 @@ const getByIdMiddleware = (req, res, next) => {
 };
 const server = express();
 server.use(getByIdMiddleware);
+server.use(cors());
 const port = 3001;
 server.use(express.json());
 server.use("/authors", authorsRouters);

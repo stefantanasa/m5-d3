@@ -1,0 +1,14 @@
+- npm i fs-extra
+
+- readJSON,writeJSON does stringify and parse too
+
+# Video 3
+
+- to upload files we need to use multer
+  - npm i multer
+- uploading files we use form-data
+- create public folder in the root project
+- in server.js:
+  - import {join} from "path"
+  - const publicFolderPath = join(process.cwd(), "./public")
+  - server.use(express.static(publicFolderPath))
